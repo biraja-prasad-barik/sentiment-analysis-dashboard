@@ -4,6 +4,10 @@ A simple, stable sentiment analysis dashboard for development and testing.
 
 ## 🚀 Quick Start
 
+### For Windows (Easiest):
+**Double-click**: `Bat\START_DEV.bat` - That's it! 🎉
+
+### For Everyone:
 ```powershell
 # Install dependencies
 pip install -r requirements_file/requirements_dev.txt
@@ -14,10 +18,8 @@ python app_dev.py
 
 Then open: **http://localhost:5000**
 
-### Even Easier (Windows)
-Double-click: `Bat\START_DEV.bat`
-
-Or use PowerShell: `.\Ps1\START_DEV.ps1`
+### 📖 First Time Setup?
+See **[SETUP_GUIDE.md](SETUP_GUIDE.md)** for complete instructions!
 
 ## 📁 Project Structure
 
