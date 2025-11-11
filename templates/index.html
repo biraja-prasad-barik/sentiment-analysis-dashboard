@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Sentiment Analysis</h1>
+            <nav>
+                <a href="#" class="active">Dashboard</a>
+                <a href="#" onclick="showSection('analyze')">Analyze</a>
+                <a href="#" onclick="showSection('scrape')">Scrape Reviews</a>
+            </nav>
+        </header>
+
+        <main id="dashboard">
+            <!-- Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value" id="totalReviews">0</div>
+                    <div class="stat-label">Number of Reviews</div>
+                    <div class="stat-icon">📊</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="positiveCount">0</div>
+                    <div class="stat-label">Number of Positive</div>
+                    <div class="stat-icon">😊</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="negativeCount">0</div>
+                    <div class="stat-label">Number of Negative</div>
+                    <div class="stat-icon">😞</div>
+                </div>
+            </div>
+
+            <!-- Charts Section -->
+            <div class="charts-grid">
+                <div class="chart-card">
+                    <h3>Available Data</h3>
+                    <canvas id="trendChart"></canvas>
+                </div>
+                <div class="chart-card">
+                    <h3>Analyzed Data</h3>
+                    <canvas id="emotionChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Detailed Analytics -->
+            <div class="analytics-grid">
+                <div class="analytics-card">
+                    <h3>Analyzed Data</h3>
+                    <div id="sentimentBars"></div>
+                </div>
+                <div class="analytics-card">
+                    <h3>Unanalyzed Data</h3>
+                    <div id="emotionBars"></div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Analyze Section -->
+        <div id="analyzeSection" class="section hidden">
+            <div class="analyze-container">
+                <h2>Analyze Text</h2>
+                <textarea id="analyzeText" placeholder="Enter text to analyze..."></textarea>
+                <button onclick="analyzeText()" class="btn-primary">Analyze</button>
+                <div id="analyzeResult" class="result-box"></div>
+            </div>
+        </div>
+
+        <!-- Scrape Section -->
+        <div id="scrapeSection" class="section hidden">
+            <div class="scrape-container">
+                <h2>Scrape Reviews from Websites</h2>
+                
+                <div class="source-selector">
+                    <label>Select Source:</label>
+                    <select id="sourceSelect">
+                        <option value="google_maps">Google Maps</option>
+                        <option value="tripadvisor">TripAdvisor</option>
+                        <option value="yelp">Yelp</option>
+                        <option value="hotel">Hotel (Booking.com, Hotels.com)</option>
+                        <option value="amazon">Amazon Product Reviews</option>
+                        <option value="wikipedia">Wikipedia</option>
+                    </select>
+                </div>
+                
+                <div class="url-input-container">
+                    <label>Enter URL:</label>
+                    <input type="text" id="urlInput" placeholder="Paste the URL here (e.g., https://www.google.com/maps/place/...)">
+                </div>
+                
+                <div class="example-urls">
+                    <h4>Example URLs:</h4>
+                    <ul>
+                        <li><strong>Google Maps:</strong> https://www.google.com/maps/place/[business-name]</li>
+                        <li><strong>TripAdvisor:</strong> https://www.tripadvisor.com/Hotel_Review-[hotel-id]</li>
+                        <li><strong>Yelp:</strong> https://www.yelp.com/biz/[business-name]</li>
+                        <li><strong>Amazon:</strong> https://www.amazon.com/product/[product-id]</li>
+                    </ul>
+                </div>
+                
+                <button onclick="scrapeReviews()" class="btn-primary">🔍 Scrape & Analyze Reviews</button>
+                <button onclick="testScraper()" class="btn-secondary">🧪 Test with Sample URL</button>
+                
+                <div id="scrapeResult" class="result-box"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

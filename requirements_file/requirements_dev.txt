@@ -1,0 +1,17 @@
+# Development Requirements - Minimal Dependencies
+# Install with: pip install -r requirements_file/requirements_dev.txt
+
+# Core Flask
+Flask>=3.0.0
+Flask-CORS>=4.0.0
+Flask-SQLAlchemy>=3.1.1
+
+# Database (compatible with Python 3.13)
+SQLAlchemy>=2.0.35
+
+# Web Scraping
+requests>=2.31.0
+beautifulsoup4>=4.12.2
+
+# Utilities
+Werkzeug>=3.0.1
