@@ -5,7 +5,7 @@ A simple, stable sentiment analysis dashboard for development and testing.
 ## 🚀 Quick Start
 
 ### For Windows (Easiest):
-**Double-click**: `Bat\START_DEV.bat` - That's it! 🎉
+**Double-click**: `Bat\START.bat` or `Bat\START_DEV.bat` - That's it! 🎉
 
 ### For Everyone:
 ```powershell
@@ -19,7 +19,7 @@ python app_dev.py
 Then open: **http://localhost:5000**
 
 ### 📖 First Time Setup?
-See **[SETUP_GUIDE.md](SETUP_GUIDE.md)** for complete instructions!
+See **[docs/SETUP_GUIDE.md](docs/SETUP_GUIDE.md)** for complete instructions!
 
 ## 📁 Project Structure
 
@@ -28,11 +28,15 @@ See **[SETUP_GUIDE.md](SETUP_GUIDE.md)** for complete instructions!
 ├── app_dev.py              # Main application (run this!)
 ├── static/                # Frontend files
 ├── docs/                  # Documentation
-├── python/                # Other Python files (archived)
+│   ├── SETUP_GUIDE.md     # Complete setup guide
+│   ├── GITHUB_SETUP.txt   # GitHub instructions
+│   └── ... (more docs)
 ├── Bat/                   # Batch scripts
-│   └── START_DEV.bat      # Easy startup (Windows)
+│   ├── START.bat          # Quick start (Windows)
+│   └── START_DEV.bat      # Dev start (Windows)
 ├── Ps1/                   # PowerShell scripts
 │   └── START_DEV.ps1
+├── python/                # Other Python files (archived)
 └── requirements_file/     # Requirements and guides
     ├── requirements_dev.txt
     ├── SCRAPING_GUIDE.txt
@@ -42,9 +46,11 @@ See **[SETUP_GUIDE.md](SETUP_GUIDE.md)** for complete instructions!
 ## 📚 Documentation
 
 All documentation is in the **`docs/`** folder:
+- **docs/SETUP_GUIDE.md** - Complete setup guide
 - **docs/START_HERE.md** - Start here!
 - **docs/QUICKSTART.md** - 3-step setup guide
 - **docs/README_DEV.md** - Full documentation
+- **docs/GITHUB_SETUP.txt** - GitHub instructions
 - **requirements_file/SCRAPING_GUIDE.txt** - Web scraping guide
 
 ## ✨ Features
